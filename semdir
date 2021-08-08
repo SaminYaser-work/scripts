@@ -9,6 +9,5 @@ semisterdir="${lecturedir}Sem ${1}/"
 
 mkdir "${semisterdir}" &>/dev/null
 mkdir "${semisterdir}${2}" &&
-mkdir "${semisterdir}${2}/Final" &&
-mkdir "${semisterdir}${2}/Mid" &&
+mkdir "${semisterdir}${2}/Final" "${semisterdir}${2}/Mid" &&
 echo "Sem ${1} and ${2} folders created folder created."
