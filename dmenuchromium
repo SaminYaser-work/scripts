@@ -1,0 +1,12 @@
+#!/bin/bash
+
+declare -A profiles
+profiles[Default]="Default"
+profiles[Google]="Profile 1"
+profiles[Facebook]="Profile 2"
+profiles[Microsoft]="Profile 3"
+
+
+choice=$(printf '%s\n' ${!profiles[@]} | sort | dmenu -i -l 20 -p "Choose Profile:")
+
+[ $choice != "" ] && chromium --profile-directory="${profiles[$choice]}"

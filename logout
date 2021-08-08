@@ -1,0 +1,4 @@
+#!/bin/sh
+
+sudo /usr/bin/prime-switch
+kill -TERM $(pgrep -u $USER "\bdwm$")
