@@ -1,9 +1,11 @@
 #!/bin/sh
 
 ## Creates semister directories
+## First argument  : Semister Number
+## Second argument : Course Name
 
 # Lecture Directory
-lecturedir="/home/sam/windows/C/Users/Asus/Documents/Lectures/"
+lecturedir="/home/sam/Documents/Lectures/"
 
 semisterdir="${lecturedir}Sem ${1}/"
 
