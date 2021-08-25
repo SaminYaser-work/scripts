@@ -11,12 +11,12 @@ esac
 #kill -TERM $(pgrep -u $USER "\bdwm$")
 
 cmds="\
+🖥 shutdown		${shut:-sudo -A shutdown -h now}
+🔃 reboot	${reb:-sudo -A reboot}
 🔒 lock		slock
 🚪 leave dwm	sh logout
-♻ renew dwm	kill -HUP $(pgrep -u $USER "\bdwm$")
-🐻 hibernate	slock ${hib:-systemctl suspend-then-hibernate -i}
-🔃 reboot	${reb:-sudo -A reboot}
-🖥 shutdown	${shut:-sudo -A shutdown -h now}"
+♻  renew dwm	kill -HUP $(pgrep -u $USER "\bdwm$")
+🐻 hibernate	slock ${hib:-systemctl suspend-then-hibernate -i}"
 
 choice="$(echo "$cmds" | cut -d'	' -f 1 | dmenu -l 10)" || exit 1
 
