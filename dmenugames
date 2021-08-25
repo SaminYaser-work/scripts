@@ -1,0 +1,14 @@
+#!/bin/bash
+
+## Select and lauch games with dmenu
+
+# Add games here with the path to executable
+declare -A games
+games[Starsector]="/home/sam/Games/starsector/starsector.sh"
+games[Oh-my-git]="/home/sam/Games/oh-my-git-linux/oh-my-git"
+
+
+choice=$(printf '%s\n' ${!games[@]} | sort | dmenu -i -l 20 -p "Select a game to start:")
+
+
+[ $choice != "" ] && ${games[$choice]}
