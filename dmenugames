@@ -4,11 +4,10 @@
 
 # Add games here with the path to executable
 declare -A games
-games[Starsector]="/home/sam/Games/starsector/starsector.sh"
-games[Oh-my-git]="/home/sam/Games/oh-my-git-linux/oh-my-git"
+games[Starsector]=~/Games/starsector/starsector.sh
+games[Oh-my-git]=~/Games/oh-my-git-linux/oh-my-git
 
 
-choice=$(printf '%s\n' ${!games[@]} | sort | dmenu -i -l 20 -p "Select a game to start:")
+choice=$(printf '%s\n' ${!games[@]} | sort | dmenu -i -l 20 -p "Select a game to play:")
 
-
-[ $choice != "" ] && ${games[$choice]}
+[ $choice != "" ] && cd $(dirname ${games[$choice]}) && ${games[$choice]}
